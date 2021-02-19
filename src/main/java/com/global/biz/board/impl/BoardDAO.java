@@ -6,10 +6,13 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.stereotype.Repository;
+
 import com.global.biz.board.BoardVO;
 import com.global.biz.common.JDBCUtil;
 
 // CRUD 기능을 처리할 클래스
+@Repository("boardDAO")
 public class BoardDAO {
 
 	// JDBC 관련 변수를 선언
@@ -115,7 +118,7 @@ public class BoardDAO {
 	
 	
 	// 글 목록 조회
-	public List<BoardVO> getBoardList() {
+	public List<BoardVO> getBoardList(BoardVO vo) {
 		
 		System.out.println("====> JDBC 로 getBoardList() 기능 처리 ....");
 		List<BoardVO> boardList = new ArrayList<BoardVO>();
